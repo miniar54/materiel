@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Update Materiel</h1>
+  <form [formGroup]="materielForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom" required>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type" required>
+        <mat-option value="EQUIPEMENT">EQUIPEMENT</mat-option>
+        <mat-option value="SECURITE">SECURITE</mat-option>
+        <mat-option value="ACCESSOIRE">ACCESSOIRE</mat-option>
+        <mat-option value="VETEMENTS">VETEMENTS</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Quantite</mat-label>
+      <input matInput formControlName="quantite" type="number" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!materielForm.valid">update Materiel</button>
+  </form>
+</div>

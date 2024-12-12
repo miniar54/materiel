@@ -1,0 +1,18 @@
+<div class="container" *ngIf="material">
+  <h1>Material Details</h1>
+  <mat-card>
+    <mat-card-title>{{ material.nom }}</mat-card-title>
+    <mat-card-content>
+      <p><strong>Type:</strong> {{ material.type }}</p>
+      <p><strong>Quantite:</strong> {{ material.quantite }}</p>
+    </mat-card-content>
+  </mat-card>
+
+
+  <h2>Courses</h2>
+      <div *ngFor="let course of material.courses" matLine>
+        <h3>{{ course.domaine }}</h3>
+        <p>{{ course.description }}</p>
+        <p><strong>Niveau:</strong> {{ course.niveau }}</p>
+      </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Add New Course</h1>
+  <form [formGroup]="coursForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Domaine</mat-label>
+      <input matInput formControlName="domaine" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Niveau</mat-label>
+      <input matInput formControlName="niveau" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="!coursForm.valid">Add Course</button>
+  </form>
+</div>
